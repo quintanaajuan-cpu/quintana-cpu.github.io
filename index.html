@@ -1,4 +1,4 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -166,20 +166,23 @@ html<!DOCTYPE html>
             background: var(--white);
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
         }
 
         .card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.4rem;
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        .card p {
+            color: var(--text-dark);
+            display: block !important;
+            visibility: visible !important;
         }
 
         .val-card {
@@ -327,7 +330,5 @@ html<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="section" style="background-color: #ffffff;">
-        <h2 class="section-title">Servicios Ofrecidos</h2>
-        <div class="grid-3">
+    <!-- Servicios Ofrecidos -->
+
