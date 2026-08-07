@@ -1,0 +1,302 @@
+html<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRISst digital | Agencia Publicitaria</title>
+    <style>
+        :root {
+            --bg-light: #f9fbfd;
+            --primary: #1e3a8a;
+            --accent: #d4af37;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --white: #ffffff;
+            --glow: rgba(212, 175, 55, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            color: var(--white);
+            padding: 0.6rem 1.3rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem 2rem;
+            background: radial-gradient(circle at top right, var(--glow), transparent 40%), linear-gradient(180deg, #ffffff, var(--bg-light));
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Sections General */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Valores List */
+        .valores-grid {
+            margin-top: 3rem;
+        }
+
+        .val-card {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">CRISst <span>digital</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#estructura">Estructura</a></li>
+            </ul>
+            <a href="#contacto" class="btn-cta">Ilumina tu Marca</a>
+        </nav>
+    </header>
+
+    <!-- Inicio / Hero -->
+    <section id="inicio" class="hero">
+        <h1>Con Dios todo es posible:<br><span>Impulsamos tu negocio con luz propia</span></h1>
+        <p>Somos CRISst digital. Reemplazamos lo convencional por diseños innovadores y estrategias profundas, rescatando marcas del olvido para posicionarlas en la cima del mercado.</p>
+        <a href="#servicios" class="btn-cta">Ver Servicios</a>
+    </section>
+
+    <!-- Nosotros / Identidad -->
+    <section id="nosotros" class="section">
+        <h2 class="section-title">Nuestra Esencia</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Nuestra Misión</h3>
+                <p>Transformar las visiones de las marcas reemplazándolas por diseños innovadores y nuestra creatividad característica. Llevamos a las empresas a destacar visual y estratégicamente en mercados actualmente saturados.</p>
+            </div>
+            <div class="card">
+                <h3>Nuestra Visión</h3>
+                <p>Ser la agencia publicitaria reconocida a nivel nacional e internacional por impulsar marcas que antes estaban en el olvido, transformándolas en los proyectos más exitosos y llamativos del mercado.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 4rem;">Valores Fundamentales</h2>
+        <div class="grid-2 valores-grid">
+            <div class="val-card">
+                <h3>Excelente Estética</h3>
+                <p>Cuidado riguroso de la paleta de colores para transmitir sensaciones visuales precisas y de alta calidad.</p>
+            </div>
+            <div class="val-card">
+                <h3>Profundidad Analítica</h3>
+                <p>No diseñamos de forma aleatoria; analizamos la necesidad real de la marca y el comportamiento exacto del consumidor.</p>
+            </div>
+            <div class="val-card">
+                <h3>Transparencia Radical</h3>
+                <p>Establecemos relaciones de absoluta claridad, confianza y comunicación directa con nuestros clientes.</p>
+            </div>
+            <div class="val-card">
+                <h3>Innovación</h3>
+                <p>Capacitación y actualización constante de todo nuestro equipo para ofrecer siempre las soluciones más modernas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section" style="background-color: #ffffff;">
+        <h2 class="section-title">Servicios Ofrecidos</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🎨 Branding e Identidad</h3>
+                <p>Creación integral de logotipos, tipografías personalizadas y desarrollo conceptual de marcas desde la psicología del color.</p>
+            </div>
+            <div class="card">
+                <h3>📱 Publicidad Digital</h3>
+                <p>Gestión y optimización estratégica de campañas de alto rendimiento en plataformas clave como Google, Meta y TikTok.</p>
+            </div>
+            <div class="card">
+                <h3>🎬 Producción Audiovisual</h3>
+                <p>Desarrollo de videos corporativos de alta calidad y anuncios comerciales diseñados para captar la atención de tu público objetivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estructura Organizativa -->
+    <section id="estructura" class="section">
+        <h2 class="section-title">Garantía Operativa y Equipo</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Dirección y Estrategia</h3>
+                <p>Liderado por nuestro CEO y COO, quienes orientan el rumbo de la agencia, asegurando la rentabilidad y el cumplimiento riguroso de los objetivos.</p>
+            </div>
+            <div class="card">
+                <h3>Planificación y Medios</h3>
+                <p>Nuestros Strategic Planners y Media Planners analizan el mercado para que el contenido llegue al público ideal con el menor costo de adquisición.</p>
+            </div>
+            <div class="card">
